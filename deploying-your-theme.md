@@ -1,6 +1,6 @@
 # Deploying Your Theme
 
-Once you are ready to deploy your theme, run `yarn run build` to build your production assets bundle, then run `yarn run package` to create a zip file of your theme. Locate the zip file in the `package` directory and upload it to your server.
+Once you are ready to deploy your theme, run `yarn run build` to build your production assets bundle, then run `yarn run archive` to create a zip file of your theme. Locate the zip file in the `package` directory and upload it to your server.
 
 ?>If your generated zip file is missing assets that were available to the development server, you probably forgot to specify them in the `packageFiles` section of your wpackio.project.js file.
 
