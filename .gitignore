@@ -16,4 +16,5 @@ vendor
 !.env.example
 .eslintcache
 .yarn-integrity
-wpackio.server.js
+wpackio.server.js+
+ .DS_Store
