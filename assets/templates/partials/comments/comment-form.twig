@@ -1,36 +1,35 @@
-<form action="{{ site.site_url ~ '/wp-comments-post.php' }}"
-      method="post">
-    <label>
-        {{ __('Name', 'jackpine') }}<br>
-        <input name="author" type="text" required>
-    </label>
+<form action="{{ site.site_url ~ '/wp-comments-post.php' }}" method="post">
+	<label>
+		{{ __('Name', 'jackpine') }}<br />
+		<input name="author" type="text" required />
+	</label>
 
-    <br>
+	<br />
 
-    <label>
-        {{ __('Email', 'jackpine') }}<br>
-        <input name="email" type="email" required>
-    </label>
+	<label>
+		{{ __('Email', 'jackpine') }}<br />
+		<input name="email" type="email" required />
+	</label>
 
-    <br>
+	<br />
 
-    <label>
-        {{ __('Website', 'jackpine') }}<br>
-        <input name="url" type="url">
-    </label>
+	<label>
+		{{ __('Website', 'jackpine') }}<br />
+		<input name="url" type="url" />
+	</label>
 
-    <br>
+	<br />
 
-    <label>
-        {{ __('Comment', 'jackpine') }}<br>
-        <textarea name="comment" cols="60" rows="3"></textarea>
-    </label>
+	<label>
+		{{ __('Comment', 'jackpine') }}<br />
+		<textarea name="comment" cols="60" rows="3"></textarea>
+	</label>
 
-    <input name="comment_post_ID" value="{{ post.ID }}" type="hidden">
-    <input name="comment_parent" value="{{ comment.ID | default(0) }}" type="hidden">
+	<input name="comment_post_ID" value="{{ post.ID }}" type="hidden" />
+	<input name="comment_parent" value="{{ comment.ID|default(0) }}" type="hidden" />
 
-    <div>
-        <button name="submit" type="submit">{{ __('Submit', 'jackpine') }}</button>
-        <button type="reset">{{ __('Cancel', 'jackpine') }}</button>
-    </div>
+	<div>
+		<button name="submit" type="submit">{{ __('Submit', 'jackpine') }}</button>
+		<button type="reset">{{ __('Cancel', 'jackpine') }}</button>
+	</div>
 </form>

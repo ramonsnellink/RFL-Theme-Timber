@@ -1,15 +1,19 @@
 <section>
-    {% if post.comment_status | lower == 'closed' %}
-        <p>{{ __('Comments are closed for this post', 'jackpine') }}</p>
-    {% else %}
-        <h2>{{ __('Comments', 'jackpine') }}</h2>
+	{% if (post.comment_status|lower) == 'closed' %}
+		<p>
+			{{ __('Comments are closed for this post', 'jackpine') }}
+		</p>
+	{% else %}
+		<h2>
+			{{ __('Comments', 'jackpine') }}
+		</h2>
 
-        {% for comment in post.comments %}
-            {% include 'partials/comments/comment.twig' %}
-        {% endfor %}
-    {% endif %}
+		{% for comment in post.comments %}
+			{% include 'partials/comments/comment.twig' %}
+		{% endfor %}
+	{% endif %}
 
-    <div>
-        {% include 'partials/comments/comment-form.twig' %}
-    </div>
+	<div>
+		{% include 'partials/comments/comment-form.twig' %}
+	</div>
 </section>

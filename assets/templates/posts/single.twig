@@ -1,27 +1,28 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-    <article>
-        <div>
-            {% if post.thumbnail.src %}
-                <img src="{{ post.thumbnail.src('large') }}"
-                     alt="{{ post.thumbnail.alt }}">
-            {% endif %}
+	<article>
+		<div>
+			{% if post.thumbnail.src %}
+				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
+			{% endif %}
 
-            <h2>{{ post.title }}</h2>
+			<h2>
+				{{ post.title }}
+			</h2>
 
-            <p>
-                Posted by
-                <a href="{{ post.author.link }}">{{ post.author.name }}</a>
-                on
-                <time datetime="{{ post.date | date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-            </p>
-        </div>
+			<p>
+				Posted by
+				<a href="{{ post.author.link }}">{{ post.author.name }}</a>
+				on
+				<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+			</p>
+		</div>
 
-        <div class="prose">
-            {{ post.content }}
-        </div>
-    </article>
+		<div class="prose">
+			{{ post.content }}
+		</div>
+	</article>
 
-    {% include 'partials/comments/comment-section.twig' %}
-{% endblock body %}
+	{% include 'partials/comments/comment-section.twig' %}
+{% endblock %}

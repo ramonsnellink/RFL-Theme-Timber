@@ -1,0 +1,16 @@
+{
+	"useTabs": true,
+	"semi": false,
+	"singleQuote": true,
+	"twigPrintWidth": 120,
+	"trailingComma": "none",
+	"tabWidth": 2,
+
+	"twigMultiTags": [
+		"nav,endnav",
+		"switch,case,default,endswitch",
+		"ifchildren,endifchildren",
+		"cache,endcache",
+		"js,endjs"
+	]
+}

@@ -1,73 +1,53 @@
 <nav>
-    <ul>
-        {# First #}
+	<ul>
+		{# First #}
 
-        {% set firstString = __('First', 'jackpine') %}
+		{% set firstString = __('First', 'jackpine') %}
 
-        {% if posts.pagination.pages | first and posts.pagination.pages | first.current != true %}
-            <li>
-                <a href="{{ posts.pagination.pages | first.link }}">{{ firstString }}</a>
-            </li>
-        {% else %}
-            <li>
-                <span>{{ firstString }}</span>
-            </li>
-        {% endif %}
+		{% if (posts.pagination.pages|first) and posts.pagination.pages|first.current != true %}
+			<li><a href="{{ posts.pagination.pages|first.link }}">{{ firstString }}</a></li>
+		{% else %}
+			<li><span>{{ firstString }}</span></li>
+		{% endif %}
 
-        {# Previous #}
+		{# Previous #}
 
-        {% set previousString = __('Previous', 'jackpine') %}
+		{% set previousString = __('Previous', 'jackpine') %}
 
-        {% if posts.pagination.prev %}
-            <li>
-                <a href="{{ posts.pagination.prev.link }}">{{ previousString }}</a>
-            </li>
-        {% else %}
-            <li>
-                <span>{{ previousString }}</span>
-            </li>
-        {% endif %}
+		{% if posts.pagination.prev %}
+			<li><a href="{{ posts.pagination.prev.link }}">{{ previousString }}</a></li>
+		{% else %}
+			<li><span>{{ previousString }}</span></li>
+		{% endif %}
 
-        {# Pages #}
+		{# Pages #}
 
-        {% for page in posts.pagination.pages %}
-            {% if page.link %}
-                <li>
-                    <a href="{{ page.link }}">{{ page.title }}</a>
-                </li>
-            {% else %}
-                <li>
-                    <span>{{ page.title }}</span>
-                </li>
-            {% endif %}
-        {% endfor %}
+		{% for page in posts.pagination.pages %}
+			{% if page.link %}
+				<li><a href="{{ page.link }}">{{ page.title }}</a></li>
+			{% else %}
+				<li><span>{{ page.title }}</span></li>
+			{% endif %}
+		{% endfor %}
 
-        {# Next #}
+		{# Next #}
 
-        {% set nextString = __('Next', 'jackpine') %}
+		{% set nextString = __('Next', 'jackpine') %}
 
-        {% if posts.pagination.next %}
-            <li>
-                <a href="{{ posts.pagination.next.link }}">{{ nextString }}</a>
-            </li>
-        {% else %}
-            <li>
-                <span>{{ nextString }}</span>
-            </li>
-        {% endif %}
+		{% if posts.pagination.next %}
+			<li><a href="{{ posts.pagination.next.link }}">{{ nextString }}</a></li>
+		{% else %}
+			<li><span>{{ nextString }}</span></li>
+		{% endif %}
 
-        {# Last #}
+		{# Last #}
 
-        {% set lastString = __('Last', 'jackpine') %}
+		{% set lastString = __('Last', 'jackpine') %}
 
-        {% if posts.pagination.pages | last and posts.pagination.pages | last.current != true %}
-            <li>
-                <a href="{{ posts.pagination.pages | last.link }}">{{ lastString }}</a>
-            </li>
-        {% else %}
-            <li>
-                <span>{{ lastString }}</span>
-            </li>
-        {% endif %}
-    </ul>
+		{% if (posts.pagination.pages|last) and posts.pagination.pages|last.current != true %}
+			<li><a href="{{ posts.pagination.pages|last.link }}">{{ lastString }}</a></li>
+		{% else %}
+			<li><span>{{ lastString }}</span></li>
+		{% endif %}
+	</ul>
 </nav>

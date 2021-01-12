@@ -1,18 +1,19 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-    <article>
-        <div>
-            {% if post.thumbnail.src %}
-                <img src="{{ post.thumbnail.src('large') }}"
-                     alt="{{ post.thumbnail.alt }}">
-            {% endif %}
+	<article>
+		<div>
+			{% if post.thumbnail.src %}
+				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
+			{% endif %}
 
-            <h2>{{ post.title }}</h2>
-        </div>
+			<h2>
+				{{ post.title }}
+			</h2>
+		</div>
 
-        <div class="prose">
-            {{ post.content }}
-        </div>
-    </article>
-{% endblock body %}
+		<div class="prose">
+			{{ post.content }}
+		</div>
+	</article>
+{% endblock %}

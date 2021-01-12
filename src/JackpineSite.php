@@ -108,6 +108,17 @@ class JackpineSite extends Site {
 
         // Enable menus
         add_theme_support( 'menus' );
+
+        // Enable Logo
+        add_theme_support('custom-logo', [
+            'height'      => 74,
+            'width'       => 350,
+            'flex-height' => true,
+            'flex-width'  => true,
+            'header-text' => ['site-title', 'site-description'],
+            'unlink-homepage-logo' => false,
+
+        ]);
     }
 
     /**
@@ -118,6 +129,7 @@ class JackpineSite extends Site {
      * @return array The modified global Timber context
      */
     public function add_to_context( array $context ) {
+        $context['custom_logo_url'] = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
         $context['menu'] = new Menu();
         $context['site'] = $this;
 
