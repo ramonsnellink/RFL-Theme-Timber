@@ -1,5 +1,3 @@
-![Jackpine Logo](theme/screenshot.png?raw=true "Jackpine Logo")
-
 # Jackpine
 
 [![Release](https://badgen.net/github/release/45-North-Ventures-LLC/jackpine)](https://github.com/45-North-Ventures-LLC/jackpine/releases)
@@ -30,10 +28,10 @@ Jackpine is a great starting point for any WordPress developer or team who is lo
 
 Installing and configuring Jackpine for local development is pretty straightforward:
 
-1. Clone the repository (or download the zip and extract it) into your `wp-content/themes` directory. Feel free to rename the folder to whatever you want for your site. ***Note:** If you rename the theme folder, make sure to also change the slug option in the wpack.io config to match.*
+1. Clone the repository (or download the zip and extract it) into your `wp-content/themes` directory. Feel free to rename the folder to whatever you want for your site. **\*Note:** If you rename the theme folder, make sure to also change the slug option in the wpack.io config to match.\*
 2. In the console, run `composer install` and `yarn install` to install your dependencies.
-4. Configure the wpack.io server by running `yarn run bootstrap` and answering the questions.
-5. Activate your theme in the WordPress admin panel by going to Appearance > Themes.
+3. Configure the wpack.io server by running `yarn run bootstrap` and answering the questions.
+4. Activate your theme in the WordPress admin panel by going to Appearance > Themes.
 
 Now you're set to build your theme!
 
@@ -45,7 +43,7 @@ The old way of developing a WordPress theme involved mixing HTML elements with P
 -   Style HTML elements by making use of Tailwind CSS's utility classes.
 -   Add reactivity to components with Alpine.js.
 
-To create page-specific templates, simply create a Twig file in the `templates/pages` directory called `page-{slug}.twig`, where *slug* is the title of your page. The template file will automatically be detected and applied.
+To create page-specific templates, simply create a Twig file in the `templates/pages` directory called `page-{slug}.twig`, where _slug_ is the title of your page. The template file will automatically be detected and applied.
 
 Otherwise, the PHP files function just as they would in any other WordPress theme.
 
