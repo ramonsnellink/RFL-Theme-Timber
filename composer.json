@@ -14,6 +14,7 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
+        "palmiak/timber-acf-wp-blocks": "^1.14",
         "timber/timber": "dev-2.x-term-factories",
         "wpackio/enqueue": "^2.2"
     },
