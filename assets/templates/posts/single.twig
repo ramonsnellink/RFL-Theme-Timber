@@ -1,7 +1,7 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-	<article>
+	<article class="max-w-screen-xl">
 		<div>
 			{% if post.thumbnail.src %}
 				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
@@ -19,10 +19,10 @@
 			</p>
 		</div>
 
-		<div class="prose">
+		<div class="prose-lg max-w-none">
 			{{ post.content }}
 		</div>
 	</article>
 
-	{% include 'partials/comments/comment-section.twig' %}
+	{# {% include 'partials/comments/comment-section.twig' %} #}
 {% endblock %}

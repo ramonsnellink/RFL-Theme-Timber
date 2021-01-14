@@ -56,6 +56,8 @@ class JackpineSite extends Site {
         add_action( 'init', [ $this, 'add_custom_post_types' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_wpack_scripts' ] );
         add_action( 'acf/init', [$this, 'my_acf_init' ] );
+        add_action( 'after_setup_theme', [$this, 'add_gutenberg_css'] );
+
 
         
     }
@@ -65,9 +67,7 @@ class JackpineSite extends Site {
     public function add_filters() {
         add_filter( 'timber/context', [ $this, 'add_to_context' ] );
         add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
-        // add_filter('timber/acf-gutenberg-blocks-templates', function () {
-        //     return ['assets/templates/blocks'];
-        //   });
+     
     }
 
 
@@ -130,6 +130,14 @@ class JackpineSite extends Site {
         //
     }
 
+ 
+    public function add_gutenberg_css(){
+    
+        add_theme_support( 'editor-styles' ); // if you don't add this line, your stylesheet won't be added
+        add_editor_style( 'editor-style.css' ); // tries to include editor-style.css directly from your theme folder
+    
+}
+
     /**
      * Register supported theme features.
      */
@@ -170,6 +178,16 @@ class JackpineSite extends Site {
             'unlink-homepage-logo' => false,
 
         ]);
+
+        add_editor_style(); // To add custom TinyMCE editor styles
+        add_theme_support('wp-block-styles');
+        add_theme_support('align-wide'); // Full width and wide width for images
+
+        add_theme_support('custom-background', [
+            'default-color' => '#fff',
+            'default-image' => '',
+        ]);
+    
     }
 
     /**

@@ -1,18 +1,20 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-	<article>
+	<article class="max-w-screen-xl px-4 lg:px-6 xl:px-8 ">
 		<div>
 			{% if post.thumbnail.src %}
 				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
 			{% endif %}
 
-			<h2>
+			{% if fn('is_front_page') == false %}
+			<h1 class="text-5xl">
 				{{ post.title }}
-			</h2>
+			</h1>
+			{% endif %}
 		</div>
 
-		<div class="prose">
+		<div class="prose-lg max-w-none ">
 			{{ post.content }}
 		</div>
 	</article>

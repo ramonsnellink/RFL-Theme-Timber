@@ -1,13 +1,13 @@
-<article>
+<article class="mb-10 prose-lg max-w-none">
 	{% if post.thumbnail.src %}
-		<a href="{{ post.link }}"><img src="{{ post.thumbnail.src('medium') }}" alt="{{ post.thumbnail.alt }}" /></a>
+		<a href="{{ post.link }}"><img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" /></a>
 	{% endif %}
 
-	<h2>
-		<a href="{{ post.link }}">{{ post.title }}</a>
+	<h2 class="my-3">
+		<a class="" href="{{ post.link }}">{{ post.title }}</a>
 	</h2>
 
-	<p>
+	<p class="">
 		{{ post.excerpt }}
 	</p>
 </article>
