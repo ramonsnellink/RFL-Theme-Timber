@@ -3,13 +3,13 @@
 
 		{% if item.children == false %}
 
-			<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 lg:mt-0 lg:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" " href=" {{ item.link }} " {{ item.is_target_blank ? 'target=" _blank"' }}>{{ item.title }}</a>
+			<a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray dark-mode:focus:bg-gray dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-dark lg:mt-0 lg:ml-1 hover:text-gray-dark focus:text-gray-dark hover:bg-gray-light focus:bg-gray-light focus:outline-none focus:shadow-outline" " href=" {{ item.link }} " {{ item.is_target_blank ? 'target=" _blank"' }}>{{ item.title }}</a>
 		{% endif %}
 			
 		{% if item.children %}
 		 <div @click.away="open = false" class="relative" x-data="{ open: false }">
 		
-			<button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 lg:w-auto lg:inline lg:mt-0 lg:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+			<button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray dark-mode:hover:bg-gray lg:w-auto lg:inline lg:mt-0 lg:ml-1 hover:text-gray-dark focus:text-gray-dark hover:bg-gray-light focus:bg-gray-light focus:outline-none focus:shadow-outline">
 				<span>
 					<a href="{{ item.link }}" {{ item.is_target_blank ? 'target="_blank"' }}>{{ item.title }}</a>
 				</span>
@@ -19,9 +19,9 @@
 			</button>
 
 			<div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-md lg:w-48 z-30">
-				<div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
+				<div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-dark">
 					{% for child in item.children %}
-						<a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 lg:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ child.link }}" {{ item.is_target_blank ? 'target="_blank"' }}>{{ child.title }}</a>
+						<a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray dark-mode:focus:bg-gray dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-light lg:mt-0 hover:text-gray-dark focus:text-gray-dark hover:bg-gray-light focus:bg-gray-light focus:outline-none focus:shadow-outline" href="{{ child.link }}" {{ item.is_target_blank ? 'target="_blank"' }}>{{ child.title }}</a>
 					{% endfor %}
 				</div>
 			</div>

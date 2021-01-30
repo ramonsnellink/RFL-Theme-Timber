@@ -1,9 +1,9 @@
-<header class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<header class="w-full text-gray-dark bg-white dark-mode:text-gray-light dark-mode:bg-gray-dark">
     <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto lg:items-center lg:justify-between lg:flex-row lg:px-6 xl:px-8 ">
 
     <div class="flex flex-row items-center justify-between p-4 lg:pl-0">
          {% if custom_logo_url %}
-            <a href="{{ site.home_url }}"><img src="{{custom_logo_url}}" alt="{{site.name}}"></a>
+            <a href="{{ site.home_url }}"><img  class="w-64" src="{{custom_logo_url}}" alt="{{site.name}}"></a>
          {% else %}
                <h1><a href="{{ site.home_url }}">{{ site.name }}</a></h1>
          {% endif %}

@@ -1,21 +1,30 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-	<article class="max-w-screen-xl px-4 lg:px-6 xl:px-8 ">
-		<div>
-			{% if post.thumbnail.src %}
-				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
-			{% endif %}
+	<article >
+		{% if fn('is_front_page') == false %}
+		<div class="bg-gray-light">
+			<div class="flex flex-col lg:flex-row-reverse items-center max-w-screen-2xl mx-auto">
+				
+				{% if post.thumbnail.src %}
+					<img class="lg:w-2/3" src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
+				{% endif %}
+					<div class="px-6 py-10 lg:w-1/3 lg:mr-4 xl:mr-10  text-gray-dark">
+						<h1 class="text-3xl lg:text-4xl font-bold lowercase mb-8">
+							{{ post.title }}
+						</h1>
+						<p class="my-14 lg:text-lg leading-loose lg:leading-loose max-w-prose"> {{ post.meta('pagina_samenvatting') }}</p>
 
-			{% if fn('is_front_page') == false %}
-			<h1 class="text-5xl">
-				{{ post.title }}
-			</h1>
-			{% endif %}
+						<a href="#content-start"><svg class="w-12 h-12 hidden lg:block mx-auto text-yellow " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 17l-4 4m0 0l-4-4m4 4V3"></path></svg></a>
+					</div>
+			</div>
 		</div>
+		{% endif %}
+		
 
-		<div class="prose-lg max-w-none ">
+		<div class="prose lg:prose-lg  max-w-screen-xl text-gray-dark mx-auto " id="content-start">
 			{{ post.content }}
 		</div>
 	</article>
 {% endblock %}
+   

@@ -1,25 +1,18 @@
 {% extends 'layouts/base.twig' %}
 
 {% block body %}
-	<article class="max-w-screen-xl">
+	<article class="container mx-auto flex flex-col items-center">
 		<div>
 			{% if post.thumbnail.src %}
 				<img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" />
 			{% endif %}
 
-			<h2>
+			<h1 class="text-4xl mb-10 max-w-none">
 				{{ post.title }}
-			</h2>
-
-			<p>
-				Posted by
-				<a href="{{ post.author.link }}">{{ post.author.name }}</a>
-				on
-				<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-			</p>
+			</h1>
 		</div>
 
-		<div class="prose-lg max-w-none">
+		<div class="prose lg:prose-lg">
 			{{ post.content }}
 		</div>
 	</article>

@@ -57,8 +57,8 @@ class JackpineSite extends Site {
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_wpack_scripts' ] );
         add_action( 'acf/init', [$this, 'my_acf_init' ] );
         add_action( 'after_setup_theme', [$this, 'add_gutenberg_css'] );
-
-
+        add_action( 'wp_enqueue_scripts', [$this, 'google_fonts' ] );
+     
         
     }
     /**
@@ -67,8 +67,17 @@ class JackpineSite extends Site {
     public function add_filters() {
         add_filter( 'timber/context', [ $this, 'add_to_context' ] );
         add_filter( 'timber/twig', [ $this, 'add_to_twig' ] );
+        add_filter( 'wp_enqueue_scripts', [$this, 'change_default_jquery'], PHP_INT_MAX );
+
      
     }
+
+   public  function change_default_jquery( ){
+        wp_dequeue_script( 'jquery');
+        wp_deregister_script( 'jquery');   
+    }
+
+
 
 
        /**
@@ -138,6 +147,10 @@ class JackpineSite extends Site {
     
 }
 
+    public function google_fonts() {
+        wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap', false );
+    }
+
     /**
      * Register supported theme features.
      */
@@ -179,7 +192,7 @@ class JackpineSite extends Site {
 
         ]);
 
-        add_editor_style(); // To add custom TinyMCE editor styles
+        add_editor_style('style-editor.css'); // To add custom TinyMCE editor styles
         add_theme_support('wp-block-styles');
         add_theme_support('align-wide'); // Full width and wide width for images
 
@@ -189,6 +202,8 @@ class JackpineSite extends Site {
         ]);
     
     }
+
+ 
 
     /**
      * Add variables to the global Timber context.

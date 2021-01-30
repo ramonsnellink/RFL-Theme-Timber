@@ -6,10 +6,10 @@
 		<meta name="description" content="{{ site.description }}" />
 		{{ function('wp_head') }}
 	</head>
-	<body>
+	<body class="font-sans antialiased">
 		{% include 'partials/header.twig' %}
 
-		<main class="w-full flex justify-center">
+		<main class="w-full">
 			{% block body %}
 
 			{% endblock %}
