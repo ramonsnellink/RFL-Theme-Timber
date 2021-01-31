@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
 	darkMode: 'media',
-	purge: ['assets/templates/**/*.twig'],
+	purge: ['assets/templates/**/*.twig'], // hier ook custom blocks aan toevoegen?
 	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 	theme: {
 		container: {

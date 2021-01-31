@@ -1,55 +1,53 @@
 {
-    "name": "@45northventures/jackpine",
-    "version": "0.11.0",
-    "author": "45 North Ventures",
-    "contributors": [
-        "Dylan Layne Tanner <dylan.tanner@45northventures.com>",
-        "Aedon Tanner <aedon.tanner@45northventures.com>"
-    ],
-    "homepage": "https://github.com/45-North-Ventures-LLC/jackpine",
-    "license": "MIT",
-    "private": true,
-    "scripts": {
-        "bootstrap": "wpackio-scripts bootstrap",
-        "build": "wpackio-scripts build",
-        "start": "wpackio-scripts start",
-        "archive": "wpackio-scripts build && wpackio-scripts pack",
-        "lint": "yarn run lint-js && yarn run lint-css",
-        "lint-js": "eslint assets --ext .js,.ts --no-error-on-unmatched-pattern",
-        "lint-css": "stylelint \"assets/**/*.{css,less,sass,scss}\" --allow-empty-input"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.{js,ts}": [
-            "eslint",
-            "prettier"
-        ],
-        "*.{css,less,sass,scss}": "stylelint"
-    },
-    "dependencies": {
-        "@wpackio/entrypoint": "^5.0.0"
-    },
-    "devDependencies": {
-        "@tailwindcss/forms": "^0.2.1",
-        "@tailwindcss/typography": "^0.3.1",
-        "@wpackio/cli": "^5.0.0",
-        "@wpackio/scripts": "^5.0.0",
-        "alpinejs": "^2.7.2",
-        "autoprefixer": "^9.8.6",
-        "eslint": "^7.11.0",
-        "eslint-plugin-vue": "^7.4.1",
-        "husky": "^4.3.0",
-        "lint-staged": "^10.5.2",
-        "postcss": "^7.0.35",
-        "prettier": "^2.1.2",
-        "prettier-plugin-twig-melody": "^0.4.6",
-        "sass": "^1.27.0",
-        "stylelint": "^13.7.2",
-        "stylelint-config-standard": "^20.0.0",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
-    }
+	"name": "@45northventures/jackpine",
+	"version": "0.11.0",
+	"author": "45 North Ventures",
+	"contributors": [
+		"Dylan Layne Tanner <dylan.tanner@45northventures.com>",
+		"Aedon Tanner <aedon.tanner@45northventures.com>"
+	],
+	"homepage": "https://github.com/45-North-Ventures-LLC/jackpine",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"bootstrap": "wpackio-scripts bootstrap",
+		"build": "wpackio-scripts build",
+		"start": "wpackio-scripts start",
+		"archive": "wpackio-scripts build && wpackio-scripts pack",
+		"lint": "yarn run lint-js && yarn run lint-css",
+		"lint-js": "eslint assets --ext .js,.ts --no-error-on-unmatched-pattern"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,ts}": [
+			"eslint",
+			"prettier"
+		]
+	},
+	"dependencies": {
+		"@wpackio/entrypoint": "^5.0.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/forms": "^0.2.1",
+		"@tailwindcss/typography": "^0.3.1",
+		"@wpackio/cli": "^5.0.0",
+		"@wpackio/scripts": "^5.0.0",
+		"alpinejs": "^2.7.2",
+		"autoprefixer": "^9.8.6",
+		"eslint": "^7.11.0",
+		"eslint-plugin-vue": "^7.4.1",
+		"husky": "^4.3.0",
+		"lint-staged": "^10.5.2",
+		"postcss": "^7.0.35",
+		"prettier": "^2.1.2",
+		"prettier-plugin-twig-melody": "^0.4.6",
+		"sass": "^1.27.0",
+		"stylelint": "^13.7.2",
+		"stylelint-config-standard": "^20.0.0",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
+	}
 }

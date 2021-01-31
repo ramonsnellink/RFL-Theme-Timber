@@ -193,8 +193,11 @@ class JackpineSite extends Site {
         ]);
 
         add_editor_style('style-editor.css'); // To add custom TinyMCE editor styles
+        add_editor_style( 'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' );
+
         add_theme_support('wp-block-styles');
         add_theme_support('align-wide'); // Full width and wide width for images
+        
 
         add_theme_support('custom-background', [
             'default-color' => '#fff',
