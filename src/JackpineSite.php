@@ -55,7 +55,7 @@ class JackpineSite extends Site {
         add_action( 'init', [ $this, 'add_custom_taxonomies' ] );
         add_action( 'init', [ $this, 'add_custom_post_types' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_wpack_scripts' ] );
-        add_action( 'acf/init', [$this, 'my_acf_init' ] );
+        // add_action( 'acf/init', [$this, 'my_acf_init' ] );
         add_action( 'after_setup_theme', [$this, 'add_gutenberg_css'] );
         add_action( 'wp_enqueue_scripts', [$this, 'google_fonts' ] );
      
@@ -83,23 +83,23 @@ class JackpineSite extends Site {
        /**
      * Register ACF Blocks
      */
-    public function my_acf_init() {
-        // Bail out if function doesn’t exist.
-        if ( ! function_exists( 'acf_register_block' ) ) {
-            return;
-        }
+    // public function my_acf_init() {
+    //     // Bail out if function doesn’t exist.
+    //     if ( ! function_exists( 'acf_register_block' ) ) {
+    //         return;
+    //     }
     
-        // Register a new block.
-        acf_register_block( array(
-            'name'            => 'example_block',
-            'title'           => __( 'Example Block', 'jackpine' ),
-            'description'     => __( 'A custom example block.', 'jackpine' ),
-            'render_callback' => [$this, 'my_acf_block_render_callback'],
-            'category'        => 'formatting',
-            'icon'            => 'admin-comments',
-            'keywords'        => array( 'example' ),
-        ) );
-    }
+    //     // Register a new block.
+    //     acf_register_block( array(
+    //         'name'            => 'example_block',
+    //         'title'           => __( 'Example Block', 'jackpine' ),
+    //         'description'     => __( 'A custom example block.', 'jackpine' ),
+    //         'render_callback' => [$this, 'my_acf_block_render_callback'],
+    //         'category'        => 'formatting',
+    //         'icon'            => 'admin-comments',
+    //         'keywords'        => array( 'example' ),
+    //     ) );
+    // }
 
 
     /**
@@ -109,21 +109,21 @@ class JackpineSite extends Site {
  * @param   string $content    The block content (emtpy string).
  * @param   bool   $is_preview True during AJAX preview.
  */
-    public function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
-        $context = Timber::context();
+    // public function my_acf_block_render_callback( $block, $content = '', $is_preview = false ) {
+    //     $context = Timber::context();
 
-        // Store block values.
-        $context['block'] = $block;
+    //     // Store block values.
+    //     $context['block'] = $block;
 
-        // Store field values.
-        $context['fields'] = get_fields();
+    //     // Store field values.
+    //     $context['fields'] = get_fields();
 
-        // Store $is_preview value.
-        $context['is_preview'] = $is_preview;
+    //     // Store $is_preview value.
+    //     $context['is_preview'] = $is_preview;
 
-        // Render the block.
-        Timber::render( 'blocks/example-block.twig', $context );
-    }
+    //     // Render the block.
+    //     Timber::render( 'blocks/example-block.twig', $context );
+    // }
 
     /**
      * Register custom taxonomies.

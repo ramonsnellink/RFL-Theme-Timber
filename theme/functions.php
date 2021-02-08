@@ -17,4 +17,9 @@ use Jackpine\JackpineSite;
 
 new JackpineSite( 'jackpine', '0.11.0', '../dist', '../assets/templates' );
 
+add_filter('timber/acf-gutenberg-blocks-templates', function () {
+    return ['../assets/templates/blocks'];
+});
+
+
 
